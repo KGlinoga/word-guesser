@@ -26,7 +26,7 @@ function setTime() {
   }
 
   function sendMessage() {
-    timeEl.textContent = " ";
+    alert("Bummer!");
   };
 
  
