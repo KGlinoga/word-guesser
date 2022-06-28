@@ -1,11 +1,12 @@
 var timeEl = document.querySelector(".time");
 var mainEl = document.getElementById("main");
+var textAreaEl = document.querySelector('#textarea')
 
 var secondsLeft = 10;
 
-timeEl.addEventListener('click', function(event) {
+mainEl.addEventListener('click', function(event) {
     event.preventDefault();
-    textAreaEl.value = " ";
+    setTime();
 })
 
 function setTime() {
@@ -28,4 +29,4 @@ function setTime() {
     timeEl.textContent = " ";
   };
 
-  setTime();
+ 
