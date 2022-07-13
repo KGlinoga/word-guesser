@@ -5,19 +5,19 @@
 }
 
 header {
-    background: cornflowerblue;
+    background: magenta;
     height: 10vh;
     text-align: center;
 }
 
 main {
-    background: salmon;
+    background: pink;
     height:90vh;
     display: flex;
 }
 
 section {
-    background: green;
+    background: pink;
     width:70%;
     display:flex;
     align-items: center;
@@ -29,6 +29,6 @@ section h2 {
 }
 
 aside {
-    background: darkred;
+    background: lightyellow;
     width:30%;
 }
