@@ -19,7 +19,7 @@ var timeLeft = 10;
 var timer;
 var isPlaying = false;
 
-  startBtn.addEventListener("click", function()){
+  startBtn.addEventListener("click", function(){
     if(isPlaying){
       return;
     }
@@ -36,10 +36,19 @@ var isPlaying = false;
     timer = setInterval(function(){
       timeLeft--;
       timeLeftSpan.textContent=timeLeft
-        if(!)
-    }
-  }
+        if(!timeLeft){
+          console.log("you lose")
+          losses++;
+          lossSpan.textContent=losses;
+          //saves scores to ls
+          localStorage.setItem("savedLosses", losses);
+          clearInterval(timer);
+          isPlaying = false;
+        }
+    },1000)
+  })
 
+  
 
 
 
