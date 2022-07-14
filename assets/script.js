@@ -47,9 +47,47 @@ var isPlaying = false;
         }
     },1000)
   })
+//listen for keystrokes
+document.addEventListener("keyup",function(event){
+  // do the edge case FIRST: user pushes keys before game starts
+  if(!isPlaying){
+    return;
+  }
+  console.log(event.key);
+  //
+  if(randomWord.includes(event.key)){
+    for (let i = 0; i < randomWord.length; i++){
+      if(event.key===randomWord[i]){
+        userGuesses[i]=event.key
+      }
+    }
+    console.log(userGuesses)
+    //win condition
+    if(userGuesses.join("")===randomWord){
+      console.log("winner!")
+      clearInterval(timer);
+      wins++;
+      winSpan.textContent=wins;
+      //save scores to ls
+      localStorage.setItem("savedWins",wins)
+      isPlaying = false;
+    }
+    wordDisplay.textContent= userGuesses.join(" ");
+  } else {
+      console.log("not in word")
+  }
+})
 
-  
+//reset button
 
+resetBtn.addEventListener("click",function(){
+  wins=0;
+  losses=0;
+  localStorage.setItem("savedWins",0);
+  localStorage.setItem("savedLosses",0);
+  winSpan.textContent=0;
+  lossSpan.textContent=0;
+})
 
 
 
